@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<c:url value="/novaEmpresa" var="novaEmpresa" />
-<c:url value="/listaEmpresas" var="listaEmpresas" />
+
+<c:url value="/entrada" var="entrada" />
 
 
 <!DOCTYPE html>
@@ -14,13 +14,15 @@
 
 
 
-	<form action="${ novaEmpresa }">
+	<form action="${ entrada }">
+	
+		<input type="hidden" name="acao" value="NovaEmpresa" />
 	
 		Nome: <input type="text" name="nome" method="post" /> 
 		
 		Data Abertura: <input type="text" name="data" method="post" /> 
 		
-		<input type="submit" />
+		<input type="submit" value="Cadastrar" />
 		
 		<br/>
 		<br/>
@@ -28,9 +30,10 @@
 	</form>
 	
 	
-	<form action="${ listaEmpresas }">
+	<form action="${ entrada }">
 	
 		<input type="submit" value="Listar Empresas"/>
+		<input type="hidden" name="acao" value="ListaEmpresas" />
 		
 	</form>
 

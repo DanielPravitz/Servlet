@@ -4,9 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
-<c:url value="/novaEmpresa" var="novaEmpresa" />
-<c:url value="/removeEmpresa" var="removeEmpresa" />
-<c:url value="/mostraEmpresa" var="mostraEmpresa" />
+<c:url value="/entrada" var="entrada" />
 
 <!DOCTYPE html>
 <html>
@@ -30,9 +28,9 @@
 		     <li> 
 		     		${empresa.id} - ${ empresa.nome } - <fmt:formatDate value="${empresa.dataAbertura }" pattern="dd/MM/yyyy"/>
 		     		
-		     		<a href="${ mostraEmpresa }?id=${empresa.id}">Editar</a>
+		     		<a href="${ entrada }?acao=MostraEmpresa&id=${empresa.id}">Editar</a>
 		     		
-		     		<a href="${ removeEmpresa }?id=${empresa.id}">Remover</a>
+		     		<a href="${ entrada }?acao=RemoveEmpresa&id=${empresa.id}">Remover</a>
 		     		
 		      </li>
 		      
@@ -42,7 +40,11 @@
 		
 	</ul>
 	
-	<form action="${ novaEmpresa }">
+	<form action="${ entrada }">
+	
+		<input type="hidden" name="acao" value="NovaEmpresa" />
+		
+		<input type="hidden" name="novaEmpresa" value="true" />
 	
 		<input type="submit" value="Cadastrar Empresa"/>
 		
