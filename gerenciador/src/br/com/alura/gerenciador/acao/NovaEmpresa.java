@@ -5,7 +5,6 @@ import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +15,7 @@ import br.com.alura.gerenciador.modelo.Empresa;
 
 public class NovaEmpresa {
 
-	public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Cadastrando nova empresa...");
 		
 		String nomeEmpresa = request.getParameter("nome");
@@ -26,8 +25,8 @@ public class NovaEmpresa {
 		//Se nao possuir parametros entao apenas abre o formulario para cadastrar nova empresa
 		if(nomeEmpresa ==null && dataEmpresa == null)
 		{
-			RequestDispatcher rd = request.getRequestDispatcher("formNovaEmpresa.jsp");
-			rd.forward(request, response);
+			return "forward:formNovaEmpresa.jsp";
+			
 		}
 		
 		
@@ -53,7 +52,9 @@ public class NovaEmpresa {
 			banco.adiciona(empresa);
 			
 			request.setAttribute("empresa", empresa.getNome());
-			response.sendRedirect("entrada?acao=ListaEmpresas");
+		
+			return "redirect:entrada?acao=ListaEmpresas";
+			
 			
 		}
 	}

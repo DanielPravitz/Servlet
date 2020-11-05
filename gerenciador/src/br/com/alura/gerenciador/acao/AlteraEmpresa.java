@@ -13,7 +13,7 @@ import br.com.alura.gerenciador.modelo.Banco;
 
 public class AlteraEmpresa {
 	
-	public void executa (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String executa (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		System.out.println("Editando empresa...");
 	
@@ -38,9 +38,8 @@ public class AlteraEmpresa {
 		banco.update(idEmpresa, nomeEmpresa, data);
 		
 		
+		return "redirect:entrada?acao=ListaEmpresas";
 		
-		
-		response.sendRedirect("entrada?acao=ListaEmpresas");
 		
 	}
 
