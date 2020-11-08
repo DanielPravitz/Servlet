@@ -10,13 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.alura.gerenciador.acao.Acao;
-import br.com.alura.gerenciador.acao.AlteraEmpresa;
-import br.com.alura.gerenciador.acao.ListaEmpresas;
-import br.com.alura.gerenciador.acao.MostraEmpresa;
-import br.com.alura.gerenciador.acao.NovaEmpresa;
-import br.com.alura.gerenciador.acao.NovaEmpresaForm;
-import br.com.alura.gerenciador.acao.RemoveEmpresa;
-
 
 
 
@@ -59,7 +52,7 @@ public class UnicaEntradaServlet extends HttpServlet {
 			}
 			else {
 				
-				response.sendRedirect( tipoEndereco[1] );
+				response.sendRedirect("entrada?acao=" + tipoEndereco[1] );
 				
 			}
 			

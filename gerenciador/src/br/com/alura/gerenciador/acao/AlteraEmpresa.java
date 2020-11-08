@@ -38,7 +38,7 @@ public class AlteraEmpresa implements Acao {
 		banco.update(idEmpresa, nomeEmpresa, data);
 		
 		
-		return "redirect:entrada?acao=ListaEmpresas";
+		return "redirect:ListaEmpresas";
 		
 		
 	}
