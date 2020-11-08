@@ -14,12 +14,16 @@
 </head>
 <body>
 
+	<c:import url="logoutParcial.jsp" />
+	
+	Usuario Logado: ${ usuarioLogado.login }
+	
+	<br />
+	<br />
+
 	<c:if test="${not empty empresa }">
 		Empresa ${ empresa } cadastrada com sucesso!
 	</c:if>
-
-	<br />
-	<br />
 	
 	Lista de Empresas usando JSTL: <br />
 	<ul>

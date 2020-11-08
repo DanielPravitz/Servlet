@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+	<c:import url="logoutParcial.jsp" />
+
 	<c:if test="${not empty empresa }">
 		Empresa ${ empresa } cadastrada com sucesso!
 	</c:if>

@@ -12,7 +12,7 @@
 </head>
 <body>
 
-
+	<c:import url="logoutParcial.jsp" />
 
 	<form action="${ entrada }">
 	

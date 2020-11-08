@@ -11,8 +11,8 @@
 </head>
 <body>
 
-
-
+	<c:import url="logoutParcial.jsp" />
+	
 	<form action="${ entrada }">
 	
 		<input type="hidden" name="acao" value="ListaEmpresas" method="post" /> 
